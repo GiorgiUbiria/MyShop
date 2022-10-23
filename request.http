@@ -1,0 +1,64 @@
+### 
+
+GET http://localhost:8080/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjU3NDgyMDIsImV4cCI6MTY2NTc1MTgwMiwiYXVkIjoiNjM0OTRiNzE4Y2YyMDc5MmIwNWJkMzI5IiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.QMnORqdImsQRNhCXXLMJWqAIF69fJCjrtCYFYcIWbH0
+
+###Error Check
+GET http://localhost:8080/asdasda
+
+
+###Login Route1
+GET http://localhost:8080/login
+
+
+###Login Route2
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email": "lei85la@gmail.com",
+    "password": "asddsa16"
+}
+
+###Register Route1
+GET http://localhost:8080/register
+
+
+###Register Route2
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+    "email": "lei85la@gmail.com",
+    "password": "asddsa16"
+}
+
+###
+POST http://localhost:8080/add-book
+Content-Type: application/json
+
+{
+    "bookName": "Giorgi",
+    "bookAuthor": "Ubiria",
+    "bookPublishYear": 20203,
+    "bookQuantity": 142,
+    "bookPrice": 1314,
+    "bookQualityGrade": "2"
+}
+
+### Delete route
+DELETE http://localhost:8080/delete-book/63494ff403dcb96359d0e721
+
+
+### Update route
+PATCH http://localhost:8080/update-book/633c2f20c761ed04cdde018c
+Content-Type: application/json
+
+{
+    "bookName": "Updated",
+    "bookAuthor": "Book",
+    "bookPublishYear": 2022,
+    "bookQuantity": 2022,
+    "bookPrice": 215.99,
+    "bookQualityGrade": "3"
+}

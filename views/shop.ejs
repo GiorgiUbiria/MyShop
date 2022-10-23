@@ -1,0 +1,45 @@
+<%- include('includes/_header.ejs') %>
+
+<main>
+  <div
+    class="container-fluid bg-trasparent my-4 p-3"
+    style="position: relative"
+  >
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+      <% for(book of books) { %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="/img/book.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="clearfix mb-3">
+              <span class="float-start badge rounded-pill bg-primary"
+                ><%=book.quality %></span
+              >
+              <span class="float-end"
+                ><a href="/delete-book/:id">Delete</a></span
+              >
+            </div>
+            <h5 class="card-title"><%= book.bookName %></h5>
+            <p class="card-list-item">Author: <b><%= book.bookAuthor %></b></p>
+            <p class="card-list-item">
+              Year of Publish:<b> <%= book.bookPublishYear %></b>
+            </p>
+            <p class="card-list-item">Price: <b><%= book.bookPrice %></b></p>
+            <p class="card-list-item">
+              Quantity:<b> <%= book.bookQuantity %></b>
+            </p>
+            <p class="card-list-item">
+              Quality(1-3): <b><%= book.bookQualityGrade %></b>
+            </p>
+            <div class="text-center my-4">
+              <a href="/update-book/:id" class="btn btn-warning">Edit Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>
+
+<%- include("includes/_footer.ejs") %>
